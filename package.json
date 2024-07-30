@@ -10,17 +10,33 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./extension.js",
+  "main": "./out/extension.js",
   "contributes": {
-    "commands": [{
-      "command": "tree-item-highlighting.helloWorld",
-      "title": "Hello World"
-    }]
+    "viewsContainers": {
+      "activitybar": [
+          {
+              "id": "demo-tree-item-highlighting",
+              "title": "TEST",
+              "icon": "$(settings-gear)"
+          }
+      ]
+    },
+    "views": {
+      "demo-tree-item-highlighting": [
+        {
+          "id": "tree-item-highlighting",
+          "name": "tree item highlighting"
+        }
+      ]
+    }
   },
   "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "vscode-test"
+
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"lint": "eslint \"src/**/*.ts\""
+
   },
   "devDependencies": {
     "@types/vscode": "^1.91.0",
@@ -28,6 +44,8 @@
     "@types/node": "18.x",
     "eslint": "^8.56.0",
     "typescript": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+		"@typescript-eslint/parser": "^6.7.0",
     "@vscode/test-cli": "^0.0.6",
     "@vscode/test-electron": "^2.3.9"
   }
