@@ -1,7 +1,10 @@
-import * as vscode from 'vscode';
+import { ExtensionContext, window } from 'vscode';
+import TreeDataProvider from './TreeDataProvider';
 
-export function activate(context: vscode.ExtensionContext) {
+export function activate(context: ExtensionContext) {
 
-	context.subscriptions.push();
+	const treeDataProvider = new TreeDataProvider();
+	const treeView = window.createTreeView('tree-item-highlighting', { treeDataProvider });
+	context.subscriptions.push(treeView);
 }
 
