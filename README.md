@@ -1,6 +1,8 @@
 # tree-item-highlighting README
 
-This is the README for your extension "tree-item-highlighting". After writing up a brief description, we recommend including the following sections.
+TEST REPO - Not for any use, just used for testing.
+
+This was created to help validate a bug in regards to vsce where tree item focus causes icons to change color. 
 
 ## Features
 
