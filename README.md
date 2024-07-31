@@ -11,3 +11,10 @@ The thought being this will represetnt the issue outlined in issue [206056](http
 1) open in vs code
 2) run `npm install` in a terminal
 3) click play in `Run and Debug` to run the `Launch Extension` [launch.json](.vscode/launch.json) config. 
+4) change focus of the seclected element between tree-items and the section headers
+
+# Result
+The command icons show up on focus (as expected), but the `iconPath` for the header item changes color to that of the `DecorationProvider`. It seems like that `iconPath` should not change color. 
+
+# Example
+![example](./example.png)
