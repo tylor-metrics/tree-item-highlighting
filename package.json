@@ -28,6 +28,35 @@
           "name": "tree item highlighting"
         }
       ]
+    },
+    "commands": [
+      {
+        "command": "commandOne",
+        "title": "command one",
+        "icon": "$(file)",
+        "enablement": "view == tree-item-highlighting"
+      },
+      {
+        "command": "commandTwo",
+        "title": "command one",
+        "icon": "$(refresh)",
+        "enablement": "view == tree-item-highlighting"
+      }
+    ],
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "commandOne",
+          "group": "inline",
+          "when": "view == tree-item-highlighting && viewItem =~ /showViewItemContext/"
+        },
+        {
+          "command": "commandTwo",
+          "group": "inline",
+          "when": "view == tree-item-highlighting && viewItem =~ /showViewItemContext/"
+        }
+
+      ]
     }
   },
   "scripts": {

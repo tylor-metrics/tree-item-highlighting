@@ -1,4 +1,4 @@
-import { TreeItem, TreeItemCollapsibleState } from 'vscode';
+import { ThemeIcon, TreeItem, TreeItemCollapsibleState } from 'vscode';
 import { HeaderItem } from './TreeDataProvider';
 
 export default class HeaderTreeItem extends TreeItem {
@@ -8,5 +8,7 @@ export default class HeaderTreeItem extends TreeItem {
     ) {
         super(element.headerText, collapsibleState);
         this.id = element.headerText;
+        this.contextValue = 'showViewItemContext=true';
+        this.iconPath = new ThemeIcon('console');
     }
 }
